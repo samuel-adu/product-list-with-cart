@@ -1,68 +1,75 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --red: hsl(14, 86%, 42%);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  --green: hsl(159, 69%, 38%);
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --rose-900: hsl(14, 65%, 9%);
+  --rose-500: hsl(12, 20%, 44%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-300: hsl(14, 25%, 72%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-50: hsl(20, 50%, 98%);
+
+  --spacing-50: 0.25rem;
+  --spacing-100: 0.5rem;
+  --spacing-150: 0.75rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+  --spacing-1100: 5.5rem;
+
+  --text-xl: clamp(2.5rem, 4vw + 1rem, 3.5rem);
+  --text-lg: 1.5rem;
+  --text-base: 1rem;
+  --text-sm: 0.875rem;
+  --text-xs: 0.75rem;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: var(--rose-50);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.text-preset-1 {
+  font-size: var(--text-xl);
+  line-height: 120%;
+  letter-spacing: 0;
+  font-weight: 700;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.text-preset-2 {
+  font-size: var(--text-lg);
+  line-height: 125%;
+  letter-spacing: 0;
+  font-weight: 700;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.text-preset-3 {
+  font-size: var(--text-base);
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.text-preset-4 {
+  font-size: var(--text-sm);
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.text-preset-4--bold {
+  font-size: var(--text-sm);
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 600;
 }
