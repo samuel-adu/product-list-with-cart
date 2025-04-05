@@ -1,43 +1,55 @@
 import './App.css';
-import Product from './components/Product';
-import productData from './data.json';
-import cartImage from './assets/images/illustration-empty-cart.svg';
+import data from './data.json';
+import { Cart } from './components/Cart';
+import { ProductList } from './components/ProductList';
 
 function App() {
-  function getImageUrl(path: string) {
-    return new URL(`./assets/images/${path}`, import.meta.url).href;
-  }
-
-  const productList = productData.map((product) => (
-    <Product
-      key={product.name}
-      desktopImage={getImageUrl(product.image.desktop)}
-      tabletImage={getImageUrl(product.image.tablet)}
-      mobileImage={getImageUrl(product.image.mobile)}
-      name={product.name}
-      price={product.price}
-      category={product.category}
-    />
-  ));
+  const orderList = [
+    {
+      image: {
+        thumbnail: 'image-tiramisu-thumbnail.jpg',
+        mobile: 'image-tiramisu-mobile.jpg',
+        tablet: 'image-tiramisu-tablet.jpg',
+        desktop: 'image-tiramisu-desktop.jpg',
+      },
+      thumbnail: 'image-tiramisu-thumbnail.jpg',
+      name: 'Classic Tiramisu',
+      category: 'Tiramisu',
+      price: 5.5,
+      quantity: 1,
+    },
+    {
+      image: {
+        thumbnail: 'image-creme-brulee-thumbnail.jpg',
+        mobile: 'image-creme-brulee-mobile.jpg',
+        tablet: 'image-creme-brulee-tablet.jpg',
+        desktop: 'image-creme-brulee-desktop.jpg',
+      },
+      thumbnail: 'image-creme-brulee-thumbnail.jpg',
+      name: 'Vanilla Bean Crème Brûlée',
+      category: 'Crème Brûlée',
+      price: 7.0,
+      quantity: 4,
+    },
+    {
+      image: {
+        thumbnail: 'image-panna-cotta-thumbnail.jpg',
+        mobile: 'image-panna-cotta-mobile.jpg',
+        tablet: 'image-panna-cotta-tablet.jpg',
+        desktop: 'image-panna-cotta-desktop.jpg',
+      },
+      thumbnail: 'image-panna-cotta-thumbnail.jpg',
+      name: 'Vanilla Panna Cotta',
+      category: 'Panna Cotta',
+      price: 6.5,
+      quantity: 2,
+    },
+  ];
   return (
     <main className="container">
       <div className="grid-container">
-        <section>
-          <h1 className="main-heading text-preset-1">Desserts</h1>
-
-          <div className="product__list">{productList}</div>
-        </section>
-
-        <section className="cart">
-          <h2 className="section-heading text-preset-2">your cart (0)</h2>
-
-          <div className="cart__empty">
-            <img src={cartImage} alt="cupcake" />
-            <p className="cart__empty-text text-preset-4--bold">
-              Your added items will appear here
-            </p>
-          </div>
-        </section>
+        <ProductList products={data} />
+        <Cart addedItems={orderList} />
       </div>
     </main>
   );

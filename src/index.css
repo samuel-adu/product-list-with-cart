@@ -19,14 +19,14 @@
   --rose-100: hsl(13, 31%, 94%);
   --rose-50: hsl(20, 50%, 98%);
 
-  --spacing-50: 0.25rem;
-  --spacing-100: 0.5rem;
-  --spacing-150: 0.75rem;
-  --spacing-200: 1rem;
-  --spacing-300: 1.5rem;
-  --spacing-400: 2rem;
-  --spacing-500: 2.5rem;
   --spacing-1100: 5.5rem;
+  --spacing-500: 2.5rem;
+  --spacing-400: 2rem;
+  --spacing-300: 1.5rem;
+  --spacing-200: 1rem;
+  --spacing-150: 0.75rem;
+  --spacing-100: 0.5rem;
+  --spacing-50: 0.25rem;
 
   --text-xl: clamp(2.5rem, 4vw + 1rem, 3.5rem);
   --text-lg: 1.5rem;
@@ -37,6 +37,10 @@
 
 body {
   background-color: var(--rose-50);
+}
+
+ul {
+  list-style: none;
 }
 
 .text-preset-1 {

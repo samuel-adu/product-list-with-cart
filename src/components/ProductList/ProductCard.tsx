@@ -1,23 +1,20 @@
-import './product.css';
-import cartIcon from '../assets/images/icon-add-to-cart.svg';
+import cartIcon from '/src/assets/images/icon-add-to-cart.svg';
 
-interface productProps {
-  desktopImage: string;
-  tabletImage: string;
-  mobileImage: string;
-  name: string;
-  category: string;
-  price: number;
-}
-
-export default function Product({
+function ProductCard({
   desktopImage,
   tabletImage,
   mobileImage,
   name,
   category,
   price,
-}: productProps) {
+}: {
+  desktopImage: string;
+  tabletImage: string;
+  mobileImage: string;
+  name: string;
+  category: string;
+  price: number;
+}) {
   return (
     <div className="product__card">
       <div className="product__preview">
@@ -38,8 +35,8 @@ export default function Product({
             className="product__image"
           />
         </picture>
-        <button className="btn btn__add-to-cart">
-          <img src={cartIcon} alt="" />
+        <button className="btn btn-add-to-cart">
+          <img src={cartIcon} alt="" className="btn__icon" />
           Add to Cart
         </button>
       </div>
@@ -52,3 +49,5 @@ export default function Product({
     </div>
   );
 }
+
+export default ProductCard;
