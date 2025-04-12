@@ -1,0 +1,136 @@
+.modal {
+  background-color: var(--white);
+  padding-inline: var(--spacing-300);
+  padding-block: var(--spacing-500) var(--spacing-300);
+  border-radius: 8px 8px 0 0;
+}
+
+.modal__header {
+  margin-bottom: var(--spacing-400);
+}
+
+.modal__icon {
+  margin-bottom: var(--spacing-300);
+}
+
+.modal__heading {
+  font-size: var(--text-xl);
+  line-height: 120%;
+  letter-spacing: 0;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: var(--spacing-100);
+}
+
+.modal__text {
+  font-size: var(--text-base);
+  line-height: auto;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--rose-500);
+}
+
+.modal__body {
+  background-color: var(--rose-50);
+  margin-bottom: var(--spacing-400);
+  padding: var(--spacing-300);
+  border-radius: 8px;
+}
+
+.confirmed-item {
+  display: flex;
+  align-items: center;
+}
+
+.confirmed-item__preview {
+  max-width: 100%;
+  width: 48px;
+  height: 48px;
+}
+
+.confirmed-item__image {
+  border-radius: 4px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin-right: var(--spacing-200);
+}
+
+.confirmed-item__desc {
+  margin-right: auto;
+}
+
+.confirmed-item__name {
+  font-size: var(--text-sm);
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 20ch;
+  margin-bottom: var(--spacing-50);
+}
+
+.confirmed-item__quantity {
+  font-size: var(--text-sm);
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 600;
+  color: var(--red);
+}
+
+.confirmed-item__price {
+  font-size: var(--text-sm);
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--rose-500);
+}
+
+.confirmed-item__order {
+  display: flex;
+  gap: var(--spacing-100);
+}
+
+.confirmed-item__amount {
+  font-size: var(--text-base);
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.confirmed__total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confirmed__total-text {
+  font-size: var(--text-sm);
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--rose-900);
+}
+
+.confirmed__total-amount {
+  font-size: var(--text-lg);
+  line-height: 125%;
+  letter-spacing: 0;
+  font-weight: 700;
+  color: var(--rose-900);
+}
+
+@media (min-width: 40rem) {
+  .modal {
+    padding: var(--spacing-500);
+    border-radius: 8px;
+  }
+
+  .confirmed-item__name {
+    width: 100%;
+  }
+}

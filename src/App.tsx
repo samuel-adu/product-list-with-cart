@@ -2,8 +2,24 @@ import './App.css';
 import data from './data.json';
 import { Cart } from './components/Cart';
 import { ProductList } from './components/ProductList';
+import { Modal } from './components/Modal';
 
 function App() {
+  // const emptyList: {
+  //   image: {
+  //     thumbnail: string;
+  //     mobile: string;
+  //     tablet: string;
+  //     desktop: string;
+  //   };
+  //   name: string;
+  //   category: string;
+  //   price: number;
+  //   quantity: number;
+  // }[] = [];
+
+  // const emptyList = [];
+
   const orderList = [
     {
       image: {
@@ -50,6 +66,7 @@ function App() {
       <div className="grid-container">
         <ProductList products={data} />
         <Cart addedItems={orderList} />
+        <Modal confirmedItems={orderList} />
       </div>
     </main>
   );

@@ -8,13 +8,21 @@
   display: flex;
   flex-direction: column;
   place-items: center;
+  gap: var(--spacing-200);
+  padding-block: var(--spacing-200);
 }
 
 .cart__empty-text {
   color: var(--rose-500);
 }
 
-.cart-list {
+.cart__heading {
+  font-size: var(--text-lg);
+  line-height: 125%;
+  letter-spacing: 0;
+  font-weight: 700;
+  color: var(--red);
+  text-transform: capitalize;
   margin-bottom: var(--spacing-300);
 }
 
@@ -22,8 +30,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--spacing-200);
-  /* position: relative; */
 }
 
 .cart-item__summary {
