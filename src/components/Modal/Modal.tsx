@@ -34,38 +34,39 @@ function Modal({ confirmedItems }: ModalProps) {
 
       <div className="modal__body">
         <ul className="modal__list">
-          {confirmedItems.map((item, index) => (
-            <Fragment key={item.name}>
-              <li>
-                <div className="confirmed-item">
-                  <img
-                    src={getImageUrl(item.image.thumbnail)}
-                    alt={`a plate of ${item.name.toLocaleLowerCase()}`}
-                    className="confirmed-item__image"
-                  />
+          {confirmedItems.map((item, index) => {
+            const amount = item.price * item.quantity;
+            return (
+              <Fragment key={item.name}>
+                <li>
+                  <div className="confirmed-item">
+                    <img
+                      src={getImageUrl(item.image.thumbnail)}
+                      alt={`a plate of ${item.name.toLocaleLowerCase()}`}
+                      className="confirmed-item__image"
+                    />
 
-                  <div className="confirmed-item__desc">
-                    <p className="confirmed-item__name">{item.name}</p>
-                    <div className="confirmed-item__order">
-                      <p className="confirmed-item__quantity">
-                        {item.quantity}x
-                      </p>
-                      <p className="confirmed-item__price">
-                        @${item.price.toFixed(2)}
-                      </p>
+                    <div className="confirmed-item__desc">
+                      <p className="confirmed-item__name">{item.name}</p>
+                      <div className="confirmed-item__order">
+                        <p className="confirmed-item__quantity">
+                          {item.quantity}x
+                        </p>
+                        <p className="confirmed-item__price">
+                          @${item.price.toFixed(2)}
+                        </p>
+                      </div>
                     </div>
-                  </div>
 
-                  <p className="confirmed__amount">
-                    {item.price * item.quantity}
-                  </p>
-                </div>
-              </li>
-              {index < confirmedItems.length - 1 && (
-                <div className="separator separator--sm"></div>
-              )}
-            </Fragment>
-          ))}
+                    <p className="confirmed__amount">${amount.toFixed(2)}</p>
+                  </div>
+                </li>
+                {index < confirmedItems.length - 1 && (
+                  <div className="separator separator--sm"></div>
+                )}
+              </Fragment>
+            );
+          })}
         </ul>
 
         <div className="separator separator--lg"></div>

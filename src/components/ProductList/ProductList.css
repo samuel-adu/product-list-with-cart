@@ -1,3 +1,7 @@
+.product__image.added {
+  border: 2px solid var(--red);
+}
+
 .productlist__heading {
   font-size: var(--text-xl);
   font-weight: 700;
@@ -15,7 +19,15 @@
 .product__preview {
   position: relative;
   margin-bottom: var(--spacing-200);
-  padding-bottom: var(--spacing-200);
+  padding-bottom: 22px;
+}
+
+.product-card__control {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
 }
 
 .product__image {

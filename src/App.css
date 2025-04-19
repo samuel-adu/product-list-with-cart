@@ -1,4 +1,14 @@
-img {
+body {
+  background-color: var(--rose-50);
+  font-family: var(--ff-primary);
+}
+
+ul {
+  list-style: none;
+}
+
+img,
+picture {
   max-width: 100%;
   display: block;
 }
@@ -24,21 +34,64 @@ img {
   margin-bottom: var(--spacing-300);
 }
 
+.text-preset-1 {
+  font-size: var(--text-xl);
+  line-height: 120%;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+.text-preset-2 {
+  font-size: var(--text-lg);
+  line-height: 125%;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+.text-preset-3 {
+  font-size: var(--text-base);
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.text-preset-4 {
+  font-size: var(--text-sm);
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.text-preset-4--bold {
+  font-size: var(--text-sm);
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
 .btn {
+  display: inline-block;
+  background: none;
   cursor: pointer;
   border: none;
+  line-height: 0;
 }
 
 .btn--primary {
   background-color: var(--red);
   color: var(--white);
   width: 100%;
-  padding: var(--spacing-200);
+  padding: var(--spacing-200) var(--spacing-300);
   border-radius: 999px;
   font-size: var(--text-base);
   line-height: 150%;
   letter-spacing: 0;
   font-weight: 600;
+  text-transform: capitalize;
+}
+
+.btn--primary:hover {
+  background-color: var(--rose-500);
 }
 
 .btn-add-to-cart {
@@ -48,16 +101,11 @@ img {
   border: 1px solid var(--rose-400);
   background-color: var(--white);
   color: var(--rose-900);
-  font-weight: bold;
+  font-weight: var(--fw-semi-bold);
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-100);
   white-space: nowrap;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 160px;
 }
 
 .btn-add-to-cart:hover {
@@ -67,6 +115,50 @@ img {
 
 .btn-add-to-cart:active {
   background-color: var(--red);
+  color: var(--white);
+}
+
+.btn-remove-item {
+  color: var(--rose-400);
+  font-size: var(--text-base);
+  font-weight: var(--fw-bold);
+  border-radius: 50%;
+  color: var(--rose-400);
+  border: 1.5px solid var(--rose-400);
+}
+
+.btn-remove-item:hover {
+  color: var(--rose-900);
+  border-color: var(--rose-900);
+}
+
+.added-item-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--red);
+  padding: var(--spacing-150);
+  border-radius: 999px;
+}
+
+.btn-quantity {
+  color: var(--white);
+  font-size: var(--text-base);
+  border: 1.5px solid var(--white);
+  border-radius: 50%;
+  font-weight: var(--fw-semi-bold);
+}
+
+.btn-quantity:hover {
+  background-color: var(--white);
+  color: var(--red);
+}
+
+.cart-item-quantity {
+  font-size: var(--text-sm);
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: var(--fw-semi-bold);
   color: var(--white);
 }
 

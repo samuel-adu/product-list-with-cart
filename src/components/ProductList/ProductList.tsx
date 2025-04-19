@@ -37,6 +37,8 @@ function ProductList({ products }: ProductListProps) {
               name={product.name}
               price={product.price}
               category={product.category}
+              isInCart={true}
+              quantity={2}
             />
           </li>
         ))}

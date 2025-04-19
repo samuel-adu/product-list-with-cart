@@ -37,14 +37,6 @@
   gap: var(--spacing-100);
 }
 
-.cart-item__btn {
-  border-radius: 50%;
-  color: var(--rose-400);
-  border: 1px solid var(--rose-400);
-  background-color: var(--white);
-  padding: 0.25rem;
-}
-
 .cart-item__name {
   color: var(--rose-900);
   margin-bottom: var(--spacing-100);

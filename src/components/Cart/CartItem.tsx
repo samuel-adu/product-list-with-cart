@@ -1,4 +1,4 @@
-import removeIcon from '/src/assets/images/icon-remove-item.svg';
+import { IoCloseSharp } from 'react-icons/io5';
 
 interface CartItemProps {
   name: string;
@@ -24,7 +24,7 @@ function CartItem({ name, price, quantity }: CartItemProps) {
         </div>
       </div>
       <button className="btn btn-remove-item cart-item__btn">
-        <img src={removeIcon} alt="" />
+        <IoCloseSharp />
       </button>
     </div>
   );
