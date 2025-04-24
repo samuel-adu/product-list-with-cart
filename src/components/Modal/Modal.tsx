@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import checkIcon from '/src/assets/images/icon-order-confirmed.svg';
 import './Modal.css';
 import { createPortal } from 'react-dom';
@@ -20,9 +20,18 @@ function Modal({ closeModal }: { closeModal: () => void }) {
     return acc + item.price * item.quantity;
   }, 0);
 
+  useEffect(() => {
+    // Lock scroll
+    document.body.style.overflow = 'hidden';
+    return () => {
+      // Re-enable scroll when modal unmounts
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   return createPortal(
-    <div className="modal__overlay" onClick={handleCloseModal}>
-      <div className="modal__content" onClick={(e) => e.stopPropagation()}>
+    <div className="modal__overlay">
+      <div className="modal__content">
         <div className="modal__header">
           <img src={checkIcon} alt="" className="modal__icon" />
           <p className="modal__heading">order confirmed</p>

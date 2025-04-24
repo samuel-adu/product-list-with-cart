@@ -7,6 +7,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
   z-index: 1000;
+  overflow-y: auto;
 }
 
 .modal__content {
@@ -17,6 +18,9 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .modal__header {
@@ -141,13 +145,27 @@
 @media (min-width: 40rem) {
   .modal__content {
     padding: var(--spacing-500);
-    border-radius: 8px;
-    width: 90%;
-    max-width: 592px;
+    border-radius: 12px;
+    max-width: 688px;
     left: 50%;
     top: 50%;
     bottom: auto;
+    max-height: 685px;
     transform: translate(-50%, -50%);
+  }
+
+  .confirmed-item__name {
+    width: 100%;
+  }
+}
+
+@media (min-width: 80rem) {
+  .modal__overlay {
+    padding: var(--spacing-300);
+  }
+
+  .modal__content {
+    max-width: 600px;
   }
 
   .confirmed-item__name {
