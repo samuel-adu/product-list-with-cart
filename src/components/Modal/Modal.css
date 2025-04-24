@@ -1,8 +1,22 @@
-.modal {
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
+}
+
+.modal__content {
   background-color: var(--white);
   padding-inline: var(--spacing-300);
   padding-block: var(--spacing-500) var(--spacing-300);
   border-radius: 8px 8px 0 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .modal__header {
@@ -125,9 +139,15 @@
 }
 
 @media (min-width: 40rem) {
-  .modal {
+  .modal__content {
     padding: var(--spacing-500);
     border-radius: 8px;
+    width: 90%;
+    max-width: 592px;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
   }
 
   .confirmed-item__name {

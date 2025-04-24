@@ -77,6 +77,20 @@ picture {
   line-height: 0;
 }
 
+.btn-quantity:disabled {
+  /* background-color: var(--red); */
+  /* color: var(--white); */
+  /* border-color: var(--white); */
+  cursor: not-allowed;
+}
+
+.btn-quantity:disabled:hover {
+  background-color: var(--red);
+  color: var(--white);
+  border-color: var(--white);
+  cursor: not-allowed;
+}
+
 .btn--primary {
   background-color: var(--red);
   color: var(--white);

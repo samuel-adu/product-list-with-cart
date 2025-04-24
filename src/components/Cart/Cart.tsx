@@ -1,36 +1,25 @@
-import { Fragment, useId } from 'react';
+import { Fragment } from 'react';
 import CartItem from './CartItem';
 import TreeIcon from '/src/assets/images/icon-carbon-neutral.svg';
 import CartEmpty from './CartEmpty';
 
 import './Cart.css';
+import { useCart } from '../../contexts/CartContext';
 
-interface Item {
-  image: {
-    thumbnail: string;
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
-  name: string;
-  category: string;
-  price: number;
-  quantity: number;
-}
+function Cart({ showModal }: { showModal: () => void }) {
+  const { cart } = useCart();
 
-type addedItemsProps = {
-  addedItems: Item[];
-};
-
-function Cart({ addedItems }: addedItemsProps) {
-  const orderTotal = 46.5;
-  const orderCount = 7;
-
-  const id = useId();
-
-  if (addedItems.length === 0) {
+  if (cart.length === 0) {
     return <CartEmpty />;
   }
+
+  const orderCount = cart.reduce((acc, item) => {
+    return acc + item.quantity;
+  }, 0);
+
+  const orderTotal = cart.reduce((acc, item) => {
+    return acc + item.price * item.quantity;
+  }, 0);
 
   return (
     <div className="cart">
@@ -40,16 +29,14 @@ function Cart({ addedItems }: addedItemsProps) {
 
       <div className="cart__body">
         <ul className="cart-list">
-          {addedItems.map((item, index) => (
-            <Fragment key={id}>
-              <li>
-                <CartItem
-                  name={item.name}
-                  price={item.price}
-                  quantity={item.quantity}
-                />
-              </li>
-              {index < addedItems.length - 1 && (
+          {cart.map((item, index) => (
+            <Fragment key={item.name}>
+              <CartItem
+                name={item.name}
+                price={item.price}
+                quantity={item.quantity}
+              />
+              {index < cart.length - 1 && (
                 <div className="separator separator--sm"></div>
               )}
             </Fragment>
@@ -72,7 +59,9 @@ function Cart({ addedItems }: addedItemsProps) {
           </p>
         </div>
 
-        <button className="btn btn--primary">Confirm Order</button>
+        <button className="btn btn--primary" onClick={showModal}>
+          Confirm Order
+        </button>
       </div>
     </div>
   );
