@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [product-list-with-cart-by-samuel-adu.vercel.app](https://product-list-with-cart-by-samuel-adu.vercel.app)
+- Solution URL: [https://www.frontendmentor.io/solutions/product-list-with-cart-using-usereducers-EWg3DY3_YT](https://www.frontendmentor.io/solutions/product-list-with-cart-using-usereducers-EWg3DY3_YT)
+- Live Site URL: [https://product-list-with-cart-by-samuel-adu.vercel.app](https://product-list-with-cart-by-samuel-adu.vercel.app)
 
 ## My process
 
