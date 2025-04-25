@@ -1,7 +1,3 @@
-:root {
-  --container-padding: var(--spacing-300);
-}
-
 body {
   background-color: var(--rose-50);
   font-family: var(--ff-primary);
@@ -21,9 +17,9 @@ picture {
   display: grid;
   grid-template-columns:
     1fr
-    min(75rem, calc(100% - (var(--container-padding) * 2)))
+    min(75rem, calc(100% - (var(--spacing-300) * 2)))
     1fr;
-  margin-block: var(--spacing-300);
+  padding-block: var(--spacing-300);
 }
 
 .container > * {
@@ -201,8 +197,12 @@ picture {
 /* Cart */
 
 @media (min-width: 40rem) {
-  :root {
-    --container-padding: var(--spacing-500);
+  .container {
+    grid-template-columns:
+      1fr
+      min(75rem, calc(100% - (var(--spacing-500) * 2)))
+      1fr;
+    padding-block: var(--spacing-500);
   }
 
   .product__list {
@@ -213,6 +213,10 @@ picture {
 }
 
 @media (min-width: 64rem) {
+  .container {
+    padding-block: var(--spacing-1100);
+  }
+
   .grid-container {
     grid-template-columns: 2fr 1fr;
     column-gap: var(--spacing-400);
