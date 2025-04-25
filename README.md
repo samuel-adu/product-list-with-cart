@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/product-list-with-cart-using-usereducers-EWg3DY3_YT](https://www.frontendmentor.io/solutions/product-list-with-cart-using-usereducers-EWg3DY3_YT)
+- Solution URL: [https://www.frontendmentor.io/solutions/product-list-with-usereducer-and-context-nicA5beDv\_](https://www.frontendmentor.io/solutions/product-list-with-usereducer-and-context-nicA5beDv_)
 - Live Site URL: [https://product-list-with-cart-by-samuel-adu.vercel.app](https://product-list-with-cart-by-samuel-adu.vercel.app)
 
 ## My process
