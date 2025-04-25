@@ -1,7 +1,6 @@
 body {
   background-color: var(--rose-50);
   font-family: var(--ff-primary);
-  min-height: 100dvh;
   margin: 0;
 }
 
