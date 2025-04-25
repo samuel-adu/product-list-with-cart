@@ -1,4 +1,4 @@
-import { createContext, ReactNode, use, useReducer } from 'react';
+import { createContext, ReactNode, use, useEffect, useReducer } from 'react';
 
 interface Product {
   image: {
@@ -72,9 +72,25 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | null>(null);
 
+const localStorageKey = 'cart';
+function getInitialCartState() {
+  const localStorageValue = localStorage.getItem(localStorageKey);
+  return localStorageValue ? JSON.parse(localStorageValue) : [];
+}
+
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cart, dispatch] = useReducer(cartStateReducer, []);
+  const [cart, dispatch] = useReducer(
+    cartStateReducer,
+    null,
+    getInitialCartState
+  );
+
+  useEffect(() => {
+    localStorage.setItem(localStorageKey, JSON.stringify(cart));
+  }, [cart]);
+
   const value = { cart, dispatch };
+
   return <CartContext value={value}>{children}</CartContext>;
 }
 
