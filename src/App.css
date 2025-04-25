@@ -1,6 +1,8 @@
 body {
   background-color: var(--rose-50);
   font-family: var(--ff-primary);
+  min-height: 100dvh;
+  margin: 0;
 }
 
 ul {
@@ -20,7 +22,6 @@ picture {
     min(75rem, calc(100% - (var(--spacing-300) * 2)))
     1fr;
   padding-block: var(--spacing-300);
-  min-height: 100dvh;
 }
 
 .container > * {
